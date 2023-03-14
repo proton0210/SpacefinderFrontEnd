@@ -1,4 +1,4 @@
 interface User {
-  userName: string;
-  email: string;
+  username: string;
+  email?: string;
 }

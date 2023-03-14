@@ -2,15 +2,11 @@
 
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import SignIn from './SignIn';
 import { UserProvider } from './UserContext';
+import NavBar from './Navabar';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  return (
-    <UserProvider>
-      <SignIn />
-    </UserProvider>
-  );
+  return <h3 className="text-center mt-10">Welcome to SpaceFinder</h3>;
 }
