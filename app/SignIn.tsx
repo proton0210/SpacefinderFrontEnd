@@ -1,13 +1,10 @@
 'use client';
 import { AuthService } from '@/services/AuthService';
 import React, { useRef, useState } from 'react';
-import { useUser } from '../UserContext';
-import { useRouter } from 'next/navigation';
+import { useUser } from './UserContext';
 
 export default function SignIn() {
   const authService = new AuthService();
-  const router = useRouter();
-
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const [signInError, setSignInError] = useState(false);
@@ -20,9 +17,7 @@ export default function SignIn() {
     try {
       const result = await authService.login(username!, password!);
       if (result) {
-        const data = { ...user, username } as User;
-        setUser(data);
-        router.push('/profile');
+        console.log(result);
       } else {
         console.log('wrong login');
         setSignInError(true);

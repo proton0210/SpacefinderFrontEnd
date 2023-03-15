@@ -2,6 +2,11 @@
 
 import React, { createContext, useContext, useState } from 'react';
 
+interface User {
+  name: string;
+  email: string;
+}
+
 interface UserContextValue {
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
